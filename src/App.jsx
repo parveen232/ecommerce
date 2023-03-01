@@ -1,25 +1,26 @@
-import Items from "./Items";
+import { Link, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Products from "./pages/Products";
+import About from "./pages/About";
+import Cart from "./pages/Cart";
+import Navbar from "./Navbar";
 
 export default function App() {
   return (
     <>
       <header>
         <div className="h-container">
-          <span className="logo">ecommerce</span>
-          <div className="navbar">
-            <ul>
-              <li>
-                <a href="./">Home</a>
-              </li>
-              <li>
-                <a href="./cart">Cart</a>
-              </li>
-            </ul>
-          </div>
+          <Link to="/" className="logo">ecommerce</Link>
+          <Navbar />
         </div>
       </header>
       <main>
-        <Items />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
       </main>
     </>
   );

@@ -13,7 +13,7 @@ export default function Items() {
                 <h2 className="price">{item.price}</h2>
                 <h3 className="item-name">{item.name}</h3>
                 <p>{item.description}</p>
-                <button className="atc-btn">Add to Cart</button>
+                <button className="atc-btn btn">Add to Cart</button>
               </div>
             </li>
           ))}

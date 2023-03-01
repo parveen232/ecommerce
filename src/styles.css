@@ -16,6 +16,8 @@ body {
 }
 
 .logo {
+  text-decoration: none;
+  color: royalblue;
   font-size: 40px;
   margin: 30px 0 20px;
 }
@@ -90,12 +92,21 @@ body {
   margin-top: 10px;
 }
 
-.atc-btn {
-  background-color: rgb(60, 60, 225);
+.btn {
   padding: 10px 20px;
   font-size: 18px;
   border: none;
   color: #fff;
+  margin-right: 10px;
+}
+
+.view-btn {
+  color: #000;
+  background-color: rgb(160, 160, 220);
+}
+
+.atc-btn {
+  background-color: rgb(60, 60, 225);
 }
 
 button {
