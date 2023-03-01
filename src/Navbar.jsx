@@ -14,7 +14,10 @@ export default function Navbar() {
           <Link to="./products" as={NavLink}>Products</Link>
         </li>
         <li>
-          <Link to="./cart" as={NavLink}>Cart</Link>
+          <Link to="./cart" as={NavLink} className="cart-btn">
+            Cart
+            <div className="cart-num">5</div>
+          </Link>
         </li>
       </ul>
     </div>
