@@ -60,6 +60,17 @@ body {
   border-radius: 50vh;
 }
 
+.route-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 40px;
+}
+
+.about-page {
+  text-align: center;
+}
+
 .items-container {
   margin: 40px 0;
   padding: 0 30px;
@@ -110,15 +121,24 @@ body {
   margin-top: 10px;
 }
 
+.item-detail {
+  display: flex;
+  gap: 40px;
+  margin: 30px 40px;
+}
+
 .btn {
   padding: 10px 20px;
   font-size: 18px;
   border: none;
   color: #fff;
+  margin-top: 20px;
   margin-right: 10px;
 }
 
 .view-btn {
+  display: inline-block;
+  text-decoration: none;
   color: #000;
   background-color: rgb(160, 160, 220);
 }
