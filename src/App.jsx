@@ -5,8 +5,20 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Navbar from "./Navbar";
 import Item from "./pages/Item";
+import { useState } from "react";
 
 export default function App() {
+  const [cartNum, setCartNum] = useState(0);
+  const [itemNum, setItemNum] = useState(1);
+
+  function handleAdd() {
+    setCartNum(+cartNum + +itemNum);
+  }
+
+  function handleOnChange(e) {
+    setItemNum(e.target.value);
+  }
+
   return (
     <>
       <header>
@@ -14,7 +26,7 @@ export default function App() {
           <Link to="/" className="logo">
             ecommerce
           </Link>
-          <Navbar />
+          <Navbar cartNum={cartNum} />
         </div>
       </header>
       <main>
@@ -24,7 +36,16 @@ export default function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/about" element={<About />} />
             <Route path="/cart" element={<Cart />} />
-            <Route path="/products/:itemId" element={<Item />} />
+            <Route
+              path="/products/:itemId"
+              element={
+                <Item
+                  itemNum={itemNum}
+                  onChange={handleOnChange}
+                  onClick={handleAdd}
+                />
+              }
+            />
           </Routes>
         </div>
       </main>

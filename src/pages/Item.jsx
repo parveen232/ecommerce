@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import items from "../data/items";
 
-export default function Item() {
+export default function Item({ itemNum, onChange, onClick }) {
   const { itemId } = useParams();
   const item = items.find((item) => item.id == itemId);
   const { name, image, description, price, rating } = item;
@@ -20,7 +20,32 @@ export default function Item() {
           eum officia minus iusto voluptates, exercitationem, animi sequi
           molestiae ab?
         </p>
-        <button className="atc-btn btn">Add to Cart</button>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert(itemNum);
+          }}
+        >
+          <label htmlFor="item-num" id="in-label">
+            No. of items:
+            <input
+              type="number"
+              name="item-num"
+              id="item-num"
+              min="0"
+              max="10"
+              value={itemNum}
+              placeholder="itemNum"
+              onChange={onChange}
+            />
+          </label>
+          <button className="atc-btn btn" onClick={onClick}>
+            Add to Cart
+          </button>
+        </form>
+        <Link to="/cart" className="view-btn btn">
+          View Cart
+        </Link>
         <Link to="/products">Back to Products</Link>
       </div>
     </div>

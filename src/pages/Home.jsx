@@ -1,3 +1,9 @@
+import ecommerce from "../../public/ecommerce.svg";
+
 export default function Home() {
-  return <h1>Home</h1>;
+  return (
+    <div className="home-page">
+      <img src={ecommerce} alt="" />
+    </div>
+  );
 }
