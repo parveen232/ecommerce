@@ -10,6 +10,9 @@ import { useState } from "react";
 export default function App() {
   const [cartNum, setCartNum] = useState(0);
   const [itemNum, setItemNum] = useState(1);
+  const [cart, setCart] = useState([]);
+
+  console.log(cart);
 
   function handleAdd() {
     setCartNum(+cartNum + +itemNum);
@@ -35,7 +38,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/about" element={<About />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<Cart cart={cart} />} />
             <Route
               path="/products/:itemId"
               element={
@@ -43,6 +46,7 @@ export default function App() {
                   itemNum={itemNum}
                   onChange={handleOnChange}
                   onClick={handleAdd}
+                  setCart={setCart}
                 />
               }
             />
