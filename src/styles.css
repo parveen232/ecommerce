@@ -106,6 +106,15 @@ body {
   height: 100px;
 }
 
+.remove-btn {
+  background-color: royalblue;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+}
+
+/* ////// */
+
 .route-page {
   display: flex;
   align-items: center;

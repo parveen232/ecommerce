@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Cart({ cart }) {
+export default function Cart({ cart, setCart, cartNum, setCartNum }) {
   return (
     <div className="cart">
       {cart.length == 0 ? (
@@ -19,6 +19,7 @@ export default function Cart({ cart }) {
               <span>Price</span>
               <span>Quantity</span>
               <span>Total</span>
+              <span></span>
             </div>
             <div>
               <ul className="cart-items">
@@ -35,6 +36,17 @@ export default function Cart({ cart }) {
                     <span>${cartItem.price}</span>
                     <span>{cartItem.value}</span>
                     <span>${cartItem.value * cartItem.price}</span>
+                    <button
+                      onClick={() => {
+                        setCart(
+                          cart.filter((item) => item.id != cartItem.id)
+                        )
+                        setCartNum(+cartNum - +cartItem.value)
+                      }}
+                      className="remove-btn"
+                    >
+                      Remove
+                    </button>
                   </li>
                 ))}
               </ul>
