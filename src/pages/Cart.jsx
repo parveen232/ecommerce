@@ -38,10 +38,8 @@ export default function Cart({ cart, setCart, cartNum, setCartNum }) {
                     <span>${cartItem.value * cartItem.price}</span>
                     <button
                       onClick={() => {
-                        setCart(
-                          cart.filter((item) => item.id != cartItem.id)
-                        )
-                        setCartNum(+cartNum - +cartItem.value)
+                        setCart(cart.filter((item) => item.id != cartItem.id));
+                        setCartNum(+cartNum - +cartItem.value);
                       }}
                       className="remove-btn"
                     >
@@ -52,8 +50,39 @@ export default function Cart({ cart, setCart, cartNum, setCartNum }) {
               </ul>
             </div>
           </div>
+          <div className="order">
+            <h3>
+              Subtotal: $<Total cart={cart} />
+            </h3>
+            <p>Shipping: Free Shipping</p>
+            <h3>
+              Total: $<Total cart={cart} />
+            </h3>
+          </div>
+          <div>
+            <button
+              onClick={() => {
+                alert("Order Placed");
+                setCart([]);
+                setCartNum(0);
+              }}
+              className="order-btn btn"
+            >
+              Place Order
+            </button>
+          </div>
         </>
       )}
     </div>
+  );
+}
+
+function Total({ cart }) {
+  return (
+    <>
+      {cart.reduce(function (total, cartItem) {
+        return total + cartItem.value * cartItem.price;
+      }, 0)}
+    </>
   );
 }

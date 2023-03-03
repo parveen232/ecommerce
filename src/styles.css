@@ -113,6 +113,10 @@ body {
   padding: 10px 15px;
 }
 
+.order-btn {
+  background-color: orangered;
+}
+
 /* ////// */
 
 .route-page {
