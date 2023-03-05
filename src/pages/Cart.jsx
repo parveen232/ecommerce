@@ -14,7 +14,7 @@ export default function Cart({ cart, setCart, cartNum, setCartNum }) {
         <>
           <h1>Your Cart</h1>
           <div className="cart-container">
-            <div className="cart-table">
+            <div className="cart-head">
               <span>Product</span>
               <span>Price</span>
               <span>Quantity</span>
@@ -33,18 +33,28 @@ export default function Cart({ cart, setCart, cartNum, setCartNum }) {
                       />
                       <span>{cartItem.name}</span>
                     </div>
-                    <span>${cartItem.price}</span>
-                    <span>{cartItem.value}</span>
-                    <span>${cartItem.value * cartItem.price}</span>
-                    <button
-                      onClick={() => {
-                        setCart(cart.filter((item) => item.id != cartItem.id));
-                        setCartNum(+cartNum - +cartItem.value);
-                      }}
-                      className="remove-btn"
-                    >
-                      Remove
-                    </button>
+                    <div>
+                      <span>${cartItem.price}</span>
+                    </div>
+                    <div>
+                      <span>{cartItem.value}</span>
+                    </div>
+                    <div>
+                      <span>${cartItem.value * cartItem.price}</span>
+                    </div>
+                    <div>
+                      <button
+                        onClick={() => {
+                          setCart(
+                            cart.filter((item) => item.id != cartItem.id)
+                          );
+                          setCartNum(+cartNum - +cartItem.value);
+                        }}
+                        className="remove-btn"
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </li>
                 ))}
               </ul>

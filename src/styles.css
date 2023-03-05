@@ -30,8 +30,9 @@ body {
 
 .navbar ul {
   list-style: none;
-  padding: 0;
+  padding: 10px 30px;
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
   justify-content: center;
 }
@@ -54,13 +55,16 @@ body {
   text-align: center;
 }
 
-.cart-table {
-  display: flex;
+.cart-head {
   width: 100%;
-  justify-content: space-between;
   padding: 20px 0;
   border-top: 2px solid royalblue;
   border-bottom: 2px solid royalblue;
+}
+
+.cart-head span {
+  display: inline-block;
+  width: 20%;
 }
 
 .cart-btn {
@@ -95,6 +99,10 @@ body {
   justify-content: space-between;
 }
 
+.cart-item div {
+  width: 20%;
+}
+
 .cart-product {
   display: flex;
   align-items: center;
@@ -117,7 +125,7 @@ body {
   background-color: orangered;
 }
 
-/* ////// */
+/* page */
 
 .route-page {
   display: flex;
@@ -125,6 +133,8 @@ body {
   justify-content: center;
   margin: 30px 40px;
 }
+
+/* about page */
 
 .about-page {
   display: flex;
@@ -136,6 +146,12 @@ body {
   text-align: center;
   max-width: 600px;
 }
+
+.ecommerce-img {
+  max-width: 90vw;
+}
+
+/* products page */
 
 .items-container {
   margin: 40px 0;
@@ -162,6 +178,20 @@ body {
   height: 300px;
   width: 400px;
   object-fit: cover;
+}
+
+@media (max-width: 500px) {
+  .items-container {
+    padding: 0;
+  }
+
+  .item {
+    width: 90vw;
+  }
+
+  .item img {
+    width: 90vw;
+  }
 }
 
 .item-info {
@@ -193,6 +223,36 @@ body {
   margin: 30px 40px;
 }
 
+@media (max-width: 900px) {
+  .item-detail img {
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+@media (max-width: 650px) {
+  .item-detail {
+    flex-direction: column;
+  }
+
+  .route-page {
+    margin: 30px 10px;
+  }
+
+  .cart-product {
+    flex-direction: column;
+  }
+
+  .cart-item-img {
+    width: 100%;
+  }
+
+  .remove-btn {
+    max-width: 100%;
+    padding: 10px 5px;
+  }
+}
+
 .btn {
   padding: 10px 20px;
   font-size: 18px;
@@ -209,8 +269,20 @@ body {
   background-color: rgb(160, 160, 220);
 }
 
+.item-detail .view-btn {
+  margin-top: 40px;
+}
+
 .atc-btn {
   background-color: rgb(60, 60, 225);
+}
+
+.btp-btn {
+  width: max-content;
+  display: block;
+  background-color: rgb(234, 181, 83);
+  color: #000;
+  text-decoration: none;
 }
 
 /* detail page */
@@ -226,7 +298,18 @@ body {
   padding: 10px;
   outline: none;
   border: 2px solid royalblue;
-  margin: 0 20px;
+  margin: 20px 20px 0;
+}
+
+#item-num::-webkit-inner-spin-button,
+#item-num::-webkit-outer-spin-button
+{
+  margin-right: -10px;
+  width: 50px;
+  height: 40px;
+  padding: 0 10px;
+  color: orangered;
+  background-color: royalblue;
 }
 
 button {

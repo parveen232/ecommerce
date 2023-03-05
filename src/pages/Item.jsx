@@ -33,7 +33,7 @@ export default function Item({ itemNum, onChange, onClick, setCart }) {
           }}
         >
           <label htmlFor="item-num" id="in-label">
-            No. of items:
+            No. of item:
             <input
               type="number"
               name="item-num"
@@ -49,10 +49,12 @@ export default function Item({ itemNum, onChange, onClick, setCart }) {
             Add to Cart
           </button>
         </form>
-        <Link to="/cart" className="view-btn btn">
-          View Cart
-        </Link>
-        <Link to="/products">Back to Products</Link>
+        <div className="item-btns">
+          <Link to="/cart" className="view-btn btn">
+            View Cart
+          </Link>
+          <Link to="/products" className="btp-btn btn">Back to Products</Link>
+        </div>
       </div>
     </div>
   );

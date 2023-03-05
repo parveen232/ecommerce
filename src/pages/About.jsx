@@ -15,7 +15,7 @@ export default function About() {
           consequatur iure hic odio voluptatibus illo.
         </p>
       </div>
-      <img src={ecommerce} alt="" />
+      <img src={ecommerce} alt="ecommerce svg" className="ecommerce-img" />
     </div>
   );
 }
