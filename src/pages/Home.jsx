@@ -1,4 +1,4 @@
-import ecommerce from "../public/ecommerce.svg";
+import ecommerce from "../assets/ecommerce.svg";
 
 export default function Home() {
   return (
