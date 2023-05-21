@@ -1,5 +1,5 @@
 import { Link, Routes, Route } from "react-router-dom";
-import './styles.css'
+import "./styles.css";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import About from "./pages/About";
@@ -9,14 +9,21 @@ import Item from "./pages/Item";
 import { useState } from "react";
 
 export default function App() {
+  const [showCard, setShowCard] = useState(false);
   const [cartNum, setCartNum] = useState(0);
   const [itemNum, setItemNum] = useState(1);
   const [cart, setCart] = useState([]);
 
+  if (showCard) {
+    setTimeout(() => {
+      setShowCard(false);
+    }, 600);
+  }
   console.log(cart);
 
   function handleAdd() {
     setCartNum(+cartNum + +itemNum);
+    setShowCard(true);
   }
 
   function handleOnChange(e) {
@@ -39,7 +46,17 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/about" element={<About />} />
-            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} cartNum={cartNum} setCartNum={setCartNum}/>} />
+            <Route
+              path="/cart"
+              element={
+                <Cart
+                  cart={cart}
+                  setCart={setCart}
+                  cartNum={cartNum}
+                  setCartNum={setCartNum}
+                />
+              }
+            />
             <Route
               path="/products/:itemId"
               element={
@@ -48,6 +65,7 @@ export default function App() {
                   onChange={handleOnChange}
                   onClick={handleAdd}
                   setCart={setCart}
+                  showCard={showCard}
                 />
               }
             />

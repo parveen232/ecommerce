@@ -302,8 +302,7 @@ body {
 }
 
 #item-num::-webkit-inner-spin-button,
-#item-num::-webkit-outer-spin-button
-{
+#item-num::-webkit-outer-spin-button {
   margin-right: -10px;
   width: 50px;
   height: 40px;
@@ -314,4 +313,31 @@ body {
 
 button {
   cursor: pointer;
+}
+
+/* card */
+
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.atc-popup {
+  z-index: 10;
+  min-height: 180px;
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
 }

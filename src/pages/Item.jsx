@@ -1,7 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import items from "../data/items";
 
-export default function Item({ itemNum, onChange, onClick, setCart }) {
+export default function Item({
+  itemNum,
+  onChange,
+  onClick,
+  setCart,
+  showCard,
+}) {
   const { itemId } = useParams();
   const item = items.find((item) => item.id == itemId);
   const { name, image, description, price, rating } = item;
@@ -53,9 +59,18 @@ export default function Item({ itemNum, onChange, onClick, setCart }) {
           <Link to="/cart" className="view-btn btn">
             View Cart
           </Link>
-          <Link to="/products" className="btp-btn btn">Back to Products</Link>
+          <Link to="/products" className="btp-btn btn">
+            Back to Products
+          </Link>
         </div>
       </div>
+      {showCard ? (
+        <div class="overlay">
+          <div class="atc-popup">
+            <h2>Product added to Cart!</h2>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
