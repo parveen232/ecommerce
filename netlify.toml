@@ -19,3 +19,11 @@
   #  publish = "dist" # Folder with the static content for _redirect file
 
   ## more info on configuring this file: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+
+# The following redirect is intended for use with most SPAs
+# that handle routing internally.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200  
