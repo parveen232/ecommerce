@@ -1,4 +1,4 @@
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, useLocation } from "react-router-dom";
 import "./styles.css";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -6,11 +6,19 @@ import About from "./pages/About";
 import Cart from "./pages/Cart";
 import Navbar from "./Navbar";
 import Item from "./pages/Item";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function App() {
   const [cartNum, setCartNum] = useState(0);
   const [cart, setCart] = useState([]);
+
+  // scroll to top when route changes
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  //
 
   return (
     <>
