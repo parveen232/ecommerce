@@ -9,26 +9,8 @@ import Item from "./pages/Item";
 import { useState } from "react";
 
 export default function App() {
-  const [showCard, setShowCard] = useState(false);
   const [cartNum, setCartNum] = useState(0);
-  const [itemNum, setItemNum] = useState(1);
   const [cart, setCart] = useState([]);
-
-  if (showCard) {
-    setTimeout(() => {
-      setShowCard(false);
-    }, 600);
-  }
-  console.log(cart);
-
-  function handleAdd() {
-    setCartNum(+cartNum + +itemNum);
-    setShowCard(true);
-  }
-
-  function handleOnChange(e) {
-    setItemNum(e.target.value);
-  }
 
   return (
     <>
@@ -61,11 +43,10 @@ export default function App() {
               path="/products/:itemId"
               element={
                 <Item
-                  itemNum={itemNum}
-                  onChange={handleOnChange}
-                  onClick={handleAdd}
+                  cart={cart}
+                  cartNum={cartNum}
+                  setCartNum={setCartNum}
                   setCart={setCart}
-                  showCard={showCard}
                 />
               }
             />
